@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fConciliacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBotones = new System.Windows.Forms.Panel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -40,11 +40,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.pnlDetalle = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.nudPrecio = new System.Windows.Forms.NumericUpDown();
+            this.txtMaterial = new System.Windows.Forms.TextBox();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
+            this.nudMetros = new System.Windows.Forms.NumericUpDown();
+            this.cboSocio = new System.Windows.Forms.ComboBox();
+            this.vCamionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbCrocDataSet = new Proyecto_Residencias.dbCrocDataSet();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.dbCrocDataSet = new Proyecto_Residencias.dbCrocDataSet();
             this.vConciliacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vConciliacionTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.vConciliacionTableAdapter();
             this.tableAdapterManager = new Proyecto_Residencias.dbCrocDataSetTableAdapters.TableAdapterManager();
@@ -59,6 +64,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.vConciliacionDataGridView = new System.Windows.Forms.DataGridView();
+            this.vCamionesTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.vCamionesTableAdapter();
             this.IdConciliacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdCamion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,13 +76,21 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdSocio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.txtIdConciliacion = new System.Windows.Forms.TextBox();
+            this.tblConciliacionTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.tblConciliacionTableAdapter();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlBotones.SuspendLayout();
             this.pnlDetalle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMetros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vCamionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbCrocDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vConciliacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vConciliacionBindingNavigator)).BeginInit();
             this.vConciliacionBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vConciliacionDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBotones
@@ -97,29 +111,32 @@
             // btnEditar
             // 
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(122, 27);
+            this.btnEditar.Location = new System.Drawing.Point(118, 12);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 70);
             this.btnEditar.TabIndex = 2;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(12, 27);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 12);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 70);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(234, 27);
+            this.btnEliminar.Location = new System.Drawing.Point(229, 9);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 70);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label5
             // 
@@ -152,35 +169,123 @@
             this.btnMenu.TabIndex = 5;
             this.btnMenu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // pnlDetalle
             // 
             this.pnlDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnlDetalle.Controls.Add(this.comboBox1);
-            this.pnlDetalle.Controls.Add(this.dateTimePicker1);
+            this.pnlDetalle.Controls.Add(this.txtIdConciliacion);
+            this.pnlDetalle.Controls.Add(this.nudPrecio);
+            this.pnlDetalle.Controls.Add(this.txtMaterial);
+            this.pnlDetalle.Controls.Add(this.nudCantidad);
+            this.pnlDetalle.Controls.Add(this.nudMetros);
+            this.pnlDetalle.Controls.Add(this.cboSocio);
+            this.pnlDetalle.Controls.Add(this.dtpFecha);
             this.pnlDetalle.Controls.Add(this.btnCancelar);
             this.pnlDetalle.Controls.Add(this.btnGuardar);
             this.pnlDetalle.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlDetalle.Location = new System.Drawing.Point(0, 393);
+            this.pnlDetalle.Location = new System.Drawing.Point(0, 410);
             this.pnlDetalle.Name = "pnlDetalle";
-            this.pnlDetalle.Size = new System.Drawing.Size(1020, 107);
+            this.pnlDetalle.Size = new System.Drawing.Size(1020, 142);
             this.pnlDetalle.TabIndex = 13;
             // 
-            // comboBox1
+            // nudPrecio
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 3;
+            this.nudPrecio.DecimalPlaces = 2;
+            this.nudPrecio.Location = new System.Drawing.Point(557, 98);
+            this.nudPrecio.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.nudPrecio.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPrecio.Name = "nudPrecio";
+            this.nudPrecio.Size = new System.Drawing.Size(120, 20);
+            this.nudPrecio.TabIndex = 7;
+            this.nudPrecio.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // dateTimePicker1
+            // txtMaterial
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(13, 18);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.txtMaterial.Location = new System.Drawing.Point(557, 56);
+            this.txtMaterial.Name = "txtMaterial";
+            this.txtMaterial.Size = new System.Drawing.Size(189, 20);
+            this.txtMaterial.TabIndex = 6;
+            // 
+            // nudCantidad
+            // 
+            this.nudCantidad.Location = new System.Drawing.Point(351, 98);
+            this.nudCantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(120, 20);
+            this.nudCantidad.TabIndex = 5;
+            this.nudCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // nudMetros
+            // 
+            this.nudMetros.Location = new System.Drawing.Point(351, 57);
+            this.nudMetros.Maximum = new decimal(new int[] {
+            14,
+            0,
+            0,
+            0});
+            this.nudMetros.Minimum = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            this.nudMetros.Name = "nudMetros";
+            this.nudMetros.Size = new System.Drawing.Size(120, 20);
+            this.nudMetros.TabIndex = 4;
+            this.nudMetros.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            // 
+            // cboSocio
+            // 
+            this.cboSocio.DataSource = this.vCamionesBindingSource;
+            this.cboSocio.DisplayMember = "SocioPlaca";
+            this.cboSocio.FormattingEnabled = true;
+            this.cboSocio.Location = new System.Drawing.Point(12, 98);
+            this.cboSocio.Name = "cboSocio";
+            this.cboSocio.Size = new System.Drawing.Size(200, 21);
+            this.cboSocio.TabIndex = 3;
+            this.cboSocio.ValueMember = "IdCamion";
+            // 
+            // vCamionesBindingSource
+            // 
+            this.vCamionesBindingSource.DataMember = "vCamiones";
+            this.vCamionesBindingSource.DataSource = this.dbCrocDataSet;
+            // 
+            // dbCrocDataSet
+            // 
+            this.dbCrocDataSet.DataSetName = "dbCrocDataSet";
+            this.dbCrocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(12, 57);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 2;
             // 
             // btnCancelar
             // 
@@ -190,6 +295,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(75, 70);
             this.btnCancelar.TabIndex = 0;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -199,11 +305,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(75, 70);
             this.btnGuardar.TabIndex = 1;
             this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // dbCrocDataSet
-            // 
-            this.dbCrocDataSet.DataSetName = "dbCrocDataSet";
-            this.dbCrocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // vConciliacionBindingSource
             // 
@@ -223,7 +325,6 @@
             this.tableAdapterManager.tblSociosTableAdapter = null;
             this.tableAdapterManager.tblUsuarioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Proyecto_Residencias.dbCrocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-          //  this.tableAdapterManager.vCamionesTableAdapter = null;
             // 
             // vConciliacionBindingNavigator
             // 
@@ -343,16 +444,20 @@
             this.vConciliacionDataGridView.Location = new System.Drawing.Point(0, 125);
             this.vConciliacionDataGridView.Name = "vConciliacionDataGridView";
             this.vConciliacionDataGridView.ReadOnly = true;
-            this.vConciliacionDataGridView.Size = new System.Drawing.Size(1020, 268);
+            this.vConciliacionDataGridView.Size = new System.Drawing.Size(1020, 285);
             this.vConciliacionDataGridView.TabIndex = 14;
+            this.vConciliacionDataGridView.SelectionChanged += new System.EventHandler(this.vConciliacionDataGridView_SelectionChanged);
+            // 
+            // vCamionesTableAdapter
+            // 
+            this.vCamionesTableAdapter.ClearBeforeFill = true;
             // 
             // IdConciliacion
             // 
             this.IdConciliacion.DataPropertyName = "IdConciliacion";
-            this.IdConciliacion.HeaderText = "IdConciliacion";
+            this.IdConciliacion.HeaderText = "Folio";
             this.IdConciliacion.Name = "IdConciliacion";
             this.IdConciliacion.ReadOnly = true;
-            this.IdConciliacion.Visible = false;
             // 
             // IdCamion
             // 
@@ -365,9 +470,9 @@
             // Fecha
             // 
             this.Fecha.DataPropertyName = "Fecha";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Format = "d";
+            dataGridViewCellStyle13.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle13;
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
@@ -410,9 +515,9 @@
             // Precio
             // 
             this.Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Precio.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Format = "C2";
+            dataGridViewCellStyle14.NullValue = null;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle14;
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
@@ -433,11 +538,27 @@
             this.Activo.ReadOnly = true;
             this.Activo.Visible = false;
             // 
+            // txtIdConciliacion
+            // 
+            this.txtIdConciliacion.Enabled = false;
+            this.txtIdConciliacion.Location = new System.Drawing.Point(13, 18);
+            this.txtIdConciliacion.Name = "txtIdConciliacion";
+            this.txtIdConciliacion.Size = new System.Drawing.Size(100, 20);
+            this.txtIdConciliacion.TabIndex = 8;
+            // 
+            // tblConciliacionTableAdapter
+            // 
+            this.tblConciliacionTableAdapter.ClearBeforeFill = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // fConciliacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 500);
+            this.ClientSize = new System.Drawing.Size(1020, 552);
             this.Controls.Add(this.vConciliacionDataGridView);
             this.Controls.Add(this.vConciliacionBindingNavigator);
             this.Controls.Add(this.pnlDetalle);
@@ -448,12 +569,18 @@
             this.pnlBotones.ResumeLayout(false);
             this.pnlBotones.PerformLayout();
             this.pnlDetalle.ResumeLayout(false);
+            this.pnlDetalle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMetros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vCamionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbCrocDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vConciliacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vConciliacionBindingNavigator)).EndInit();
             this.vConciliacionBindingNavigator.ResumeLayout(false);
             this.vConciliacionBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vConciliacionDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,6 +613,15 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView vConciliacionDataGridView;
+        private System.Windows.Forms.ComboBox cboSocio;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.BindingSource vCamionesBindingSource;
+        private dbCrocDataSetTableAdapters.vCamionesTableAdapter vCamionesTableAdapter;
+        private System.Windows.Forms.NumericUpDown nudMetros;
+        private System.Windows.Forms.NumericUpDown nudPrecio;
+        private System.Windows.Forms.TextBox txtMaterial;
+        private System.Windows.Forms.NumericUpDown nudCantidad;
+        private System.Windows.Forms.TextBox txtIdConciliacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdConciliacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCamion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
@@ -497,7 +633,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdSocio;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private dbCrocDataSetTableAdapters.tblConciliacionTableAdapter tblConciliacionTableAdapter;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

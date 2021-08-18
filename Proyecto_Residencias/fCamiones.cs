@@ -63,29 +63,33 @@ namespace Proyecto_Residencias
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (valida())
             {
-                switch (this.Modo)
+                try
                 {
-                    case "Insertar":
-                        this.tblCamionesTableAdapter.Insert((int)this.idSocioComboBox.SelectedValue, this.placatxt.Text,
-                            this.colortxt.Text, this.metrostxt.Text, true);
-                        break;
-                    case "Actualizar":
-                        int idCamion = int.Parse(this.idCamiontxt.Text);
-                        this.tblCamionesTableAdapter.Update((int)this.idSocioComboBox.SelectedValue, this.placatxt.Text, this.colortxt.Text
-                        , this.metrostxt.Text, true, idCamion);
-                        break;
+                    switch (this.Modo)
+                    {
+                        case "Insertar":
+                            this.tblCamionesTableAdapter.Insert((int)this.idSocioComboBox.SelectedValue, this.placatxt.Text,
+                                this.colortxt.Text, this.metrostxt.Text, true);
+                            break;
+                        case "Actualizar":
+                            int idCamion = int.Parse(this.idCamiontxt.Text);
+                            this.tblCamionesTableAdapter.Update((int)this.idSocioComboBox.SelectedValue, this.placatxt.Text, this.colortxt.Text
+                            , this.metrostxt.Text, true, idCamion);
+                            break;
 
+                    }
+                    MessageBox.Show("Informacion guardada correctamente.");
+                    this.CargaDatos();
                 }
-                MessageBox.Show("Informacion guardada correctamente.");
-                this.CargaDatos();
-            }
-            catch (Exception ex)
-            {
+                catch (Exception ex)
+                {
 
-                MessageBox.Show("Error: " + ex.Message.ToString());
+                    MessageBox.Show("Error: " + ex.Message.ToString());
+                }
             }
+            
         }
 
         private void button6_Click(object sender, EventArgs e)

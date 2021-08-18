@@ -42,5 +42,13 @@ namespace Proyecto_Residencias
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fConciliacion f = new fConciliacion();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }

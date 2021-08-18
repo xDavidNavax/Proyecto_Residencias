@@ -57,6 +57,7 @@
             button2.TabIndex = 0;
             button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             button2.UseVisualStyleBackColor = true;
+            button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnSocios
             // 
