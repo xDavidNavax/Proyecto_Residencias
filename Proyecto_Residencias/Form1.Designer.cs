@@ -28,60 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button2;
+            System.Windows.Forms.Button button4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMenu));
-            this.btnSocios = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            System.Windows.Forms.Button button2;
             this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSocios = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            button4 = new System.Windows.Forms.Button();
             button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            button2.Location = new System.Drawing.Point(30, 27);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(77, 70);
-            button2.TabIndex = 0;
-            button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnSocios
-            // 
-            this.btnSocios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSocios.Image = ((System.Drawing.Image)(resources.GetObject("btnSocios.Image")));
-            this.btnSocios.Location = new System.Drawing.Point(164, 27);
-            this.btnSocios.Name = "btnSocios";
-            this.btnSocios.Size = new System.Drawing.Size(77, 70);
-            this.btnSocios.TabIndex = 0;
-            this.btnSocios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSocios.UseVisualStyleBackColor = true;
-            this.btnSocios.Click += new System.EventHandler(this.btnSocios_Click);
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(302, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 70);
-            this.button1.TabIndex = 0;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -92,18 +58,6 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 21);
             this.label4.TabIndex = 4;
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(932, 27);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(77, 70);
-            this.button3.TabIndex = 5;
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -152,6 +106,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(button4);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -178,6 +134,17 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "BIENVENIDO AL SISTEMA DE CONTROL C.R.O.C DE LERDO DE TEJADA.";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(439, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(189, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "REPORTE CONCILIACION";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -187,6 +154,68 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            // 
+            // button4
+            // 
+            button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            button4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            button4.Location = new System.Drawing.Point(485, 26);
+            button4.Name = "button4";
+            button4.Size = new System.Drawing.Size(77, 70);
+            button4.TabIndex = 10;
+            button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(302, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 70);
+            this.button1.TabIndex = 0;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnSocios
+            // 
+            this.btnSocios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSocios.Image = ((System.Drawing.Image)(resources.GetObject("btnSocios.Image")));
+            this.btnSocios.Location = new System.Drawing.Point(164, 27);
+            this.btnSocios.Name = "btnSocios";
+            this.btnSocios.Size = new System.Drawing.Size(77, 70);
+            this.btnSocios.TabIndex = 0;
+            this.btnSocios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSocios.UseVisualStyleBackColor = true;
+            this.btnSocios.Click += new System.EventHandler(this.btnSocios_Click);
+            // 
+            // button2
+            // 
+            button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            button2.Location = new System.Drawing.Point(30, 27);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(77, 70);
+            button2.TabIndex = 0;
+            button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(932, 27);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(77, 70);
+            this.button3.TabIndex = 5;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // fMenu
             // 
@@ -224,6 +253,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label7;
     }
 }
 

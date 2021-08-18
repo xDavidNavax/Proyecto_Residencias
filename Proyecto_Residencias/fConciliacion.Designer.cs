@@ -29,9 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label idCamionLabel;
+            System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fConciliacion));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label label7;
+            System.Windows.Forms.Label label8;
             this.pnlBotones = new System.Windows.Forms.Panel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -79,6 +86,13 @@
             this.vCamionesTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.vCamionesTableAdapter();
             this.tblConciliacionTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.tblConciliacionTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            idCamionLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
             this.pnlBotones.SuspendLayout();
             this.pnlDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
@@ -92,6 +106,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.vConciliacionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // idCamionLabel
+            // 
+            idCamionLabel.AutoSize = true;
+            idCamionLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            idCamionLabel.Location = new System.Drawing.Point(3, 21);
+            idCamionLabel.Name = "idCamionLabel";
+            idCamionLabel.Size = new System.Drawing.Size(32, 13);
+            idCamionLabel.TabIndex = 9;
+            idCamionLabel.Text = "Folio:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label1.Location = new System.Drawing.Point(3, 55);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(40, 13);
+            label1.TabIndex = 10;
+            label1.Text = "Fecha:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label2.Location = new System.Drawing.Point(3, 86);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(37, 13);
+            label2.TabIndex = 11;
+            label2.Text = "Socio:";
             // 
             // pnlBotones
             // 
@@ -174,6 +218,13 @@
             // pnlDetalle
             // 
             this.pnlDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlDetalle.Controls.Add(label8);
+            this.pnlDetalle.Controls.Add(label7);
+            this.pnlDetalle.Controls.Add(label6);
+            this.pnlDetalle.Controls.Add(label3);
+            this.pnlDetalle.Controls.Add(label2);
+            this.pnlDetalle.Controls.Add(label1);
+            this.pnlDetalle.Controls.Add(idCamionLabel);
             this.pnlDetalle.Controls.Add(this.txtIdConciliacion);
             this.pnlDetalle.Controls.Add(this.nudPrecio);
             this.pnlDetalle.Controls.Add(this.txtMaterial);
@@ -192,7 +243,7 @@
             // txtIdConciliacion
             // 
             this.txtIdConciliacion.Enabled = false;
-            this.txtIdConciliacion.Location = new System.Drawing.Point(13, 18);
+            this.txtIdConciliacion.Location = new System.Drawing.Point(66, 18);
             this.txtIdConciliacion.Name = "txtIdConciliacion";
             this.txtIdConciliacion.Size = new System.Drawing.Size(100, 20);
             this.txtIdConciliacion.TabIndex = 8;
@@ -200,7 +251,7 @@
             // nudPrecio
             // 
             this.nudPrecio.DecimalPlaces = 2;
-            this.nudPrecio.Location = new System.Drawing.Point(557, 98);
+            this.nudPrecio.Location = new System.Drawing.Point(423, 83);
             this.nudPrecio.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -222,14 +273,14 @@
             // 
             // txtMaterial
             // 
-            this.txtMaterial.Location = new System.Drawing.Point(557, 56);
+            this.txtMaterial.Location = new System.Drawing.Point(632, 48);
             this.txtMaterial.Name = "txtMaterial";
             this.txtMaterial.Size = new System.Drawing.Size(189, 20);
             this.txtMaterial.TabIndex = 6;
             // 
             // nudCantidad
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(351, 98);
+            this.nudCantidad.Location = new System.Drawing.Point(423, 55);
             this.nudCantidad.Minimum = new decimal(new int[] {
             1,
             0,
@@ -246,7 +297,7 @@
             // 
             // nudMetros
             // 
-            this.nudMetros.Location = new System.Drawing.Point(351, 57);
+            this.nudMetros.Location = new System.Drawing.Point(423, 23);
             this.nudMetros.Maximum = new decimal(new int[] {
             14,
             0,
@@ -271,9 +322,9 @@
             this.cboSocio.DataSource = this.vCamionesBindingSource;
             this.cboSocio.DisplayMember = "SocioPlaca";
             this.cboSocio.FormattingEnabled = true;
-            this.cboSocio.Location = new System.Drawing.Point(12, 98);
+            this.cboSocio.Location = new System.Drawing.Point(66, 83);
             this.cboSocio.Name = "cboSocio";
-            this.cboSocio.Size = new System.Drawing.Size(200, 21);
+            this.cboSocio.Size = new System.Drawing.Size(245, 21);
             this.cboSocio.TabIndex = 3;
             this.cboSocio.ValueMember = "IdCamion";
             // 
@@ -291,9 +342,9 @@
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(12, 57);
+            this.dtpFecha.Location = new System.Drawing.Point(66, 53);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(100, 20);
             this.dtpFecha.TabIndex = 2;
             // 
             // btnCancelar
@@ -554,6 +605,46 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label3.Location = new System.Drawing.Point(348, 25);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(42, 13);
+            label3.TabIndex = 12;
+            label3.Text = "Metros:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label6.Location = new System.Drawing.Point(350, 55);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(52, 13);
+            label6.TabIndex = 13;
+            label6.Text = "Cantidad:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label7.Location = new System.Drawing.Point(350, 88);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(40, 13);
+            label7.TabIndex = 14;
+            label7.Text = "Precio:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label8.Location = new System.Drawing.Point(569, 53);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(47, 13);
+            label8.TabIndex = 15;
+            label8.Text = "Material:";
             // 
             // fConciliacion
             // 
