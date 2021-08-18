@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label idSocioLabel;
-            System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.Label primerApellidoLabel;
-            System.Windows.Forms.Label segundoApellidoLabel;
-            System.Windows.Forms.Label telefonoLabel;
-            System.Windows.Forms.Label cuidadLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fSocios));
+            this.idSocioLabel = new System.Windows.Forms.Label();
+            this.nombreLabel = new System.Windows.Forms.Label();
+            this.primerApellidoLabel = new System.Windows.Forms.Label();
+            this.segundoApellidoLabel = new System.Windows.Forms.Label();
+            this.telefonoLabel = new System.Windows.Forms.Label();
+            this.cuidadLabel = new System.Windows.Forms.Label();
             this.pnlDetalle = new System.Windows.Forms.Panel();
             this.ciudadTextBox = new System.Windows.Forms.TextBox();
             this.tblSociosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -45,8 +45,6 @@
             this.primerApellidoTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.idSocioTextBox = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -74,12 +72,8 @@
             this.tblSociosTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.tblSociosTableAdapter();
             this.tableAdapterManager = new Proyecto_Residencias.dbCrocDataSetTableAdapters.TableAdapterManager();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            idSocioLabel = new System.Windows.Forms.Label();
-            nombreLabel = new System.Windows.Forms.Label();
-            primerApellidoLabel = new System.Windows.Forms.Label();
-            segundoApellidoLabel = new System.Windows.Forms.Label();
-            telefonoLabel = new System.Windows.Forms.Label();
-            cuidadLabel = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblSociosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbCrocDataSet)).BeginInit();
@@ -92,78 +86,78 @@
             // 
             // idSocioLabel
             // 
-            idSocioLabel.AutoSize = true;
-            idSocioLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            idSocioLabel.Location = new System.Drawing.Point(83, 22);
-            idSocioLabel.Name = "idSocioLabel";
-            idSocioLabel.Size = new System.Drawing.Size(49, 13);
-            idSocioLabel.TabIndex = 2;
-            idSocioLabel.Text = "Id Socio:";
+            this.idSocioLabel.AutoSize = true;
+            this.idSocioLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.idSocioLabel.Location = new System.Drawing.Point(83, 22);
+            this.idSocioLabel.Name = "idSocioLabel";
+            this.idSocioLabel.Size = new System.Drawing.Size(49, 13);
+            this.idSocioLabel.TabIndex = 2;
+            this.idSocioLabel.Text = "Id Socio:";
             // 
             // nombreLabel
             // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            nombreLabel.Location = new System.Drawing.Point(85, 57);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 4;
-            nombreLabel.Text = "Nombre:";
+            this.nombreLabel.AutoSize = true;
+            this.nombreLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.nombreLabel.Location = new System.Drawing.Point(85, 57);
+            this.nombreLabel.Name = "nombreLabel";
+            this.nombreLabel.Size = new System.Drawing.Size(47, 13);
+            this.nombreLabel.TabIndex = 4;
+            this.nombreLabel.Text = "Nombre:";
             // 
             // primerApellidoLabel
             // 
-            primerApellidoLabel.AutoSize = true;
-            primerApellidoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            primerApellidoLabel.Location = new System.Drawing.Point(350, 19);
-            primerApellidoLabel.Name = "primerApellidoLabel";
-            primerApellidoLabel.Size = new System.Drawing.Size(79, 13);
-            primerApellidoLabel.TabIndex = 6;
-            primerApellidoLabel.Text = "Primer Apellido:";
+            this.primerApellidoLabel.AutoSize = true;
+            this.primerApellidoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.primerApellidoLabel.Location = new System.Drawing.Point(350, 19);
+            this.primerApellidoLabel.Name = "primerApellidoLabel";
+            this.primerApellidoLabel.Size = new System.Drawing.Size(79, 13);
+            this.primerApellidoLabel.TabIndex = 6;
+            this.primerApellidoLabel.Text = "Primer Apellido:";
             // 
             // segundoApellidoLabel
             // 
-            segundoApellidoLabel.AutoSize = true;
-            segundoApellidoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            segundoApellidoLabel.Location = new System.Drawing.Point(345, 57);
-            segundoApellidoLabel.Name = "segundoApellidoLabel";
-            segundoApellidoLabel.Size = new System.Drawing.Size(93, 13);
-            segundoApellidoLabel.TabIndex = 8;
-            segundoApellidoLabel.Text = "Segundo Apellido:";
+            this.segundoApellidoLabel.AutoSize = true;
+            this.segundoApellidoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.segundoApellidoLabel.Location = new System.Drawing.Point(345, 57);
+            this.segundoApellidoLabel.Name = "segundoApellidoLabel";
+            this.segundoApellidoLabel.Size = new System.Drawing.Size(93, 13);
+            this.segundoApellidoLabel.TabIndex = 8;
+            this.segundoApellidoLabel.Text = "Segundo Apellido:";
             // 
             // telefonoLabel
             // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            telefonoLabel.Location = new System.Drawing.Point(599, 19);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(52, 13);
-            telefonoLabel.TabIndex = 10;
-            telefonoLabel.Text = "Telefono:";
+            this.telefonoLabel.AutoSize = true;
+            this.telefonoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.telefonoLabel.Location = new System.Drawing.Point(599, 19);
+            this.telefonoLabel.Name = "telefonoLabel";
+            this.telefonoLabel.Size = new System.Drawing.Size(52, 13);
+            this.telefonoLabel.TabIndex = 10;
+            this.telefonoLabel.Text = "Telefono:";
             // 
             // cuidadLabel
             // 
-            cuidadLabel.AutoSize = true;
-            cuidadLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            cuidadLabel.Location = new System.Drawing.Point(608, 60);
-            cuidadLabel.Name = "cuidadLabel";
-            cuidadLabel.Size = new System.Drawing.Size(43, 13);
-            cuidadLabel.TabIndex = 12;
-            cuidadLabel.Text = "Cuidad:";
+            this.cuidadLabel.AutoSize = true;
+            this.cuidadLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cuidadLabel.Location = new System.Drawing.Point(608, 60);
+            this.cuidadLabel.Name = "cuidadLabel";
+            this.cuidadLabel.Size = new System.Drawing.Size(43, 13);
+            this.cuidadLabel.TabIndex = 12;
+            this.cuidadLabel.Text = "Cuidad:";
             // 
             // pnlDetalle
             // 
             this.pnlDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnlDetalle.Controls.Add(cuidadLabel);
+            this.pnlDetalle.Controls.Add(this.cuidadLabel);
             this.pnlDetalle.Controls.Add(this.ciudadTextBox);
-            this.pnlDetalle.Controls.Add(telefonoLabel);
+            this.pnlDetalle.Controls.Add(this.telefonoLabel);
             this.pnlDetalle.Controls.Add(this.telefonoTextBox);
-            this.pnlDetalle.Controls.Add(segundoApellidoLabel);
+            this.pnlDetalle.Controls.Add(this.segundoApellidoLabel);
             this.pnlDetalle.Controls.Add(this.segundoApellidoTextBox);
-            this.pnlDetalle.Controls.Add(primerApellidoLabel);
+            this.pnlDetalle.Controls.Add(this.primerApellidoLabel);
             this.pnlDetalle.Controls.Add(this.primerApellidoTextBox);
-            this.pnlDetalle.Controls.Add(nombreLabel);
+            this.pnlDetalle.Controls.Add(this.nombreLabel);
             this.pnlDetalle.Controls.Add(this.nombreTextBox);
-            this.pnlDetalle.Controls.Add(idSocioLabel);
+            this.pnlDetalle.Controls.Add(this.idSocioLabel);
             this.pnlDetalle.Controls.Add(this.idSocioTextBox);
             this.pnlDetalle.Controls.Add(this.btnCancelar);
             this.pnlDetalle.Controls.Add(this.btnGuardar);
@@ -243,26 +237,6 @@
             this.idSocioTextBox.ReadOnly = true;
             this.idSocioTextBox.Size = new System.Drawing.Size(75, 20);
             this.idSocioTextBox.TabIndex = 3;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(842, 18);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 70);
-            this.btnCancelar.TabIndex = 0;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(934, 19);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 70);
-            this.btnGuardar.TabIndex = 1;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnAgregar
             // 
@@ -379,7 +353,6 @@
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
@@ -388,7 +361,6 @@
             // bindingNavigatorMovePreviousItem
             // 
             this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
@@ -417,7 +389,6 @@
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
@@ -426,7 +397,6 @@
             // bindingNavigatorMoveLastItem
             // 
             this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
@@ -527,6 +497,26 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(934, 19);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 70);
+            this.btnGuardar.TabIndex = 1;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.Location = new System.Drawing.Point(842, 18);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 70);
+            this.btnCancelar.TabIndex = 0;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // fSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,7 +528,6 @@
             this.Controls.Add(this.tblSociosBindingNavigator);
             this.Controls.Add(this.pnlBotones);
             this.Controls.Add(this.pnlDetalle);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fSocios";
             this.Opacity = 0.95D;
             this.Text = "SOCIOS";
@@ -564,8 +553,6 @@
         private System.Windows.Forms.Panel pnlDetalle;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel pnlBotones;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -598,5 +585,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label idSocioLabel;
+        private System.Windows.Forms.Label nombreLabel;
+        private System.Windows.Forms.Label primerApellidoLabel;
+        private System.Windows.Forms.Label segundoApellidoLabel;
+        private System.Windows.Forms.Label telefonoLabel;
+        private System.Windows.Forms.Label cuidadLabel;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }
