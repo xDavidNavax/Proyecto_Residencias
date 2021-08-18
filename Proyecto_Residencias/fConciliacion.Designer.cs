@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fConciliacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBotones = new System.Windows.Forms.Panel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.pnlDetalle = new System.Windows.Forms.Panel();
+            this.txtIdConciliacion = new System.Windows.Forms.TextBox();
             this.nudPrecio = new System.Windows.Forms.NumericUpDown();
             this.txtMaterial = new System.Windows.Forms.TextBox();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
@@ -64,7 +65,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.vConciliacionDataGridView = new System.Windows.Forms.DataGridView();
-            this.vCamionesTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.vCamionesTableAdapter();
             this.IdConciliacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdCamion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,7 +76,7 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdSocio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.txtIdConciliacion = new System.Windows.Forms.TextBox();
+            this.vCamionesTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.vCamionesTableAdapter();
             this.tblConciliacionTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.tblConciliacionTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlBotones.SuspendLayout();
@@ -189,6 +189,14 @@
             this.pnlDetalle.Size = new System.Drawing.Size(1020, 142);
             this.pnlDetalle.TabIndex = 13;
             // 
+            // txtIdConciliacion
+            // 
+            this.txtIdConciliacion.Enabled = false;
+            this.txtIdConciliacion.Location = new System.Drawing.Point(13, 18);
+            this.txtIdConciliacion.Name = "txtIdConciliacion";
+            this.txtIdConciliacion.Size = new System.Drawing.Size(100, 20);
+            this.txtIdConciliacion.TabIndex = 8;
+            // 
             // nudPrecio
             // 
             this.nudPrecio.DecimalPlaces = 2;
@@ -277,6 +285,7 @@
             // dbCrocDataSet
             // 
             this.dbCrocDataSet.DataSetName = "dbCrocDataSet";
+            this.dbCrocDataSet.EnforceConstraints = false;
             this.dbCrocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dtpFecha
@@ -448,10 +457,6 @@
             this.vConciliacionDataGridView.TabIndex = 14;
             this.vConciliacionDataGridView.SelectionChanged += new System.EventHandler(this.vConciliacionDataGridView_SelectionChanged);
             // 
-            // vCamionesTableAdapter
-            // 
-            this.vCamionesTableAdapter.ClearBeforeFill = true;
-            // 
             // IdConciliacion
             // 
             this.IdConciliacion.DataPropertyName = "IdConciliacion";
@@ -470,9 +475,9 @@
             // Fecha
             // 
             this.Fecha.DataPropertyName = "Fecha";
-            dataGridViewCellStyle13.Format = "d";
-            dataGridViewCellStyle13.NullValue = null;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle1;
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
@@ -515,9 +520,9 @@
             // Precio
             // 
             this.Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.Precio.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle2;
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
@@ -538,13 +543,9 @@
             this.Activo.ReadOnly = true;
             this.Activo.Visible = false;
             // 
-            // txtIdConciliacion
+            // vCamionesTableAdapter
             // 
-            this.txtIdConciliacion.Enabled = false;
-            this.txtIdConciliacion.Location = new System.Drawing.Point(13, 18);
-            this.txtIdConciliacion.Name = "txtIdConciliacion";
-            this.txtIdConciliacion.Size = new System.Drawing.Size(100, 20);
-            this.txtIdConciliacion.TabIndex = 8;
+            this.vCamionesTableAdapter.ClearBeforeFill = true;
             // 
             // tblConciliacionTableAdapter
             // 
@@ -564,7 +565,7 @@
             this.Controls.Add(this.pnlDetalle);
             this.Controls.Add(this.pnlBotones);
             this.Name = "fConciliacion";
-            this.Text = "fConciliacion";
+            this.Text = "CONCILIACIONES";
             this.Load += new System.EventHandler(this.fConciliacion_Load);
             this.pnlBotones.ResumeLayout(false);
             this.pnlBotones.PerformLayout();

@@ -237,34 +237,6 @@ WHERE        (Activo = 1)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vConciliacionTableAdapter" GeneratorDataComponentClassName="vConciliacionTableAdapter" Name="vConciliacion" UserDataComponentName="vConciliacionTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="dbCrocConnectionString (Settings)" DbObjectName="dbCroc.dbo.vConciliacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdConciliacion, IdCamion, Placa, Metros, IdSocio, Socio, Fecha, Cantidad, Material, Precio, Activo
-FROM            vConciliacion
-WHERE        (Activo = 1)</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="IdConciliacion" DataSetColumn="IdConciliacion" />
-              <Mapping SourceColumn="IdCamion" DataSetColumn="IdCamion" />
-              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
-              <Mapping SourceColumn="Metros" DataSetColumn="Metros" />
-              <Mapping SourceColumn="IdSocio" DataSetColumn="IdSocio" />
-              <Mapping SourceColumn="Socio" DataSetColumn="Socio" />
-              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
-              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
-              <Mapping SourceColumn="Material" DataSetColumn="Material" />
-              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
-              <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vCamionesTableAdapter" GeneratorDataComponentClassName="vCamionesTableAdapter" Name="vCamiones" UserDataComponentName="vCamionesTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="dbCrocConnectionString (Settings)" DbObjectName="dbCroc.dbo.vCamiones" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -347,6 +319,35 @@ SELECT IdConciliacion, IdCamion, Fecha, Cantidad, Material, Precio, Activo FROM 
             <Mappings>
               <Mapping SourceColumn="IdConciliacion" DataSetColumn="IdConciliacion" />
               <Mapping SourceColumn="IdCamion" DataSetColumn="IdCamion" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="Material" DataSetColumn="Material" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+              <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vConciliacionTableAdapter" GeneratorDataComponentClassName="vConciliacionTableAdapter" Name="vConciliacion" UserDataComponentName="vConciliacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbCrocConnectionString (Settings)" DbObjectName="dbCroc.dbo.vConciliacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        IdConciliacion, IdCamion, Placa, Metros, IdSocio, Socio, Fecha, Cantidad, Material, Precio, Activo
+FROM            vConciliacion
+WHERE        (Activo = 1)
+ORDER BY Fecha</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdConciliacion" DataSetColumn="IdConciliacion" />
+              <Mapping SourceColumn="IdCamion" DataSetColumn="IdCamion" />
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="Metros" DataSetColumn="Metros" />
+              <Mapping SourceColumn="IdSocio" DataSetColumn="IdSocio" />
+              <Mapping SourceColumn="Socio" DataSetColumn="Socio" />
               <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
               <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
               <Mapping SourceColumn="Material" DataSetColumn="Material" />
@@ -508,59 +509,6 @@ SELECT IdConciliacion, IdCamion, Fecha, Cantidad, Material, Precio, Activo FROM 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vConciliacion" msprop:Generator_TableClassName="vConciliacionDataTable" msprop:Generator_TableVarName="tablevConciliacion" msprop:Generator_RowChangedName="vConciliacionRowChanged" msprop:Generator_TablePropName="vConciliacion" msprop:Generator_RowDeletingName="vConciliacionRowDeleting" msprop:Generator_RowChangingName="vConciliacionRowChanging" msprop:Generator_RowEvHandlerName="vConciliacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vConciliacionRowDeleted" msprop:Generator_RowClassName="vConciliacionRow" msprop:Generator_UserTableName="vConciliacion" msprop:Generator_RowEvArgName="vConciliacionRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="IdConciliacion" msprop:Generator_ColumnVarNameInTable="columnIdConciliacion" msprop:Generator_ColumnPropNameInRow="IdConciliacion" msprop:Generator_ColumnPropNameInTable="IdConciliacionColumn" msprop:Generator_UserColumnName="IdConciliacion" type="xs:int" />
-              <xs:element name="IdCamion" msprop:Generator_ColumnVarNameInTable="columnIdCamion" msprop:Generator_ColumnPropNameInRow="IdCamion" msprop:Generator_ColumnPropNameInTable="IdCamionColumn" msprop:Generator_UserColumnName="IdCamion" type="xs:int" />
-              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Metros" msprop:Generator_ColumnVarNameInTable="columnMetros" msprop:Generator_ColumnPropNameInRow="Metros" msprop:Generator_ColumnPropNameInTable="MetrosColumn" msprop:Generator_UserColumnName="Metros">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="IdSocio" msprop:Generator_ColumnVarNameInTable="columnIdSocio" msprop:Generator_ColumnPropNameInRow="IdSocio" msprop:Generator_ColumnPropNameInTable="IdSocioColumn" msprop:Generator_UserColumnName="IdSocio" type="xs:int" />
-              <xs:element name="Socio" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSocio" msprop:Generator_ColumnPropNameInRow="Socio" msprop:Generator_ColumnPropNameInTable="SocioColumn" msprop:Generator_UserColumnName="Socio" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="202" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" />
-              <xs:element name="Activo" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_UserColumnName="Activo" type="xs:boolean" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="vCamiones" msprop:Generator_TableClassName="vCamionesDataTable" msprop:Generator_TableVarName="tablevCamiones" msprop:Generator_TablePropName="vCamiones" msprop:Generator_RowDeletingName="vCamionesRowDeleting" msprop:Generator_RowChangingName="vCamionesRowChanging" msprop:Generator_RowEvHandlerName="vCamionesRowChangeEventHandler" msprop:Generator_RowDeletedName="vCamionesRowDeleted" msprop:Generator_UserTableName="vCamiones" msprop:Generator_RowChangedName="vCamionesRowChanged" msprop:Generator_RowEvArgName="vCamionesRowChangeEvent" msprop:Generator_RowClassName="vCamionesRow">
           <xs:complexType>
             <xs:sequence>
@@ -610,6 +558,47 @@ SELECT IdConciliacion, IdCamion, Fecha, Cantidad, Material, Precio, Activo FROM 
             <xs:sequence>
               <xs:element name="IdConciliacion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdConciliacion" msprop:Generator_ColumnPropNameInRow="IdConciliacion" msprop:Generator_ColumnPropNameInTable="IdConciliacionColumn" msprop:Generator_UserColumnName="IdConciliacion" type="xs:int" />
               <xs:element name="IdCamion" msprop:Generator_ColumnVarNameInTable="columnIdCamion" msprop:Generator_ColumnPropNameInRow="IdCamion" msprop:Generator_ColumnPropNameInTable="IdCamionColumn" msprop:Generator_UserColumnName="IdCamion" type="xs:int" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" />
+              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" />
+              <xs:element name="Activo" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_UserColumnName="Activo" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vConciliacion" msprop:Generator_TableClassName="vConciliacionDataTable" msprop:Generator_TableVarName="tablevConciliacion" msprop:Generator_TablePropName="vConciliacion" msprop:Generator_RowDeletingName="vConciliacionRowDeleting" msprop:Generator_RowChangingName="vConciliacionRowChanging" msprop:Generator_RowEvHandlerName="vConciliacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vConciliacionRowDeleted" msprop:Generator_UserTableName="vConciliacion" msprop:Generator_RowChangedName="vConciliacionRowChanged" msprop:Generator_RowEvArgName="vConciliacionRowChangeEvent" msprop:Generator_RowClassName="vConciliacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdConciliacion" msprop:Generator_ColumnVarNameInTable="columnIdConciliacion" msprop:Generator_ColumnPropNameInRow="IdConciliacion" msprop:Generator_ColumnPropNameInTable="IdConciliacionColumn" msprop:Generator_UserColumnName="IdConciliacion" type="xs:int" />
+              <xs:element name="IdCamion" msprop:Generator_ColumnVarNameInTable="columnIdCamion" msprop:Generator_ColumnPropNameInRow="IdCamion" msprop:Generator_ColumnPropNameInTable="IdCamionColumn" msprop:Generator_UserColumnName="IdCamion" type="xs:int" />
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Metros" msprop:Generator_ColumnVarNameInTable="columnMetros" msprop:Generator_ColumnPropNameInRow="Metros" msprop:Generator_ColumnPropNameInTable="MetrosColumn" msprop:Generator_UserColumnName="Metros">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdSocio" msprop:Generator_ColumnVarNameInTable="columnIdSocio" msprop:Generator_ColumnPropNameInRow="IdSocio" msprop:Generator_ColumnPropNameInTable="IdSocioColumn" msprop:Generator_UserColumnName="IdSocio" type="xs:int" />
+              <xs:element name="Socio" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSocio" msprop:Generator_ColumnPropNameInRow="Socio" msprop:Generator_ColumnPropNameInTable="SocioColumn" msprop:Generator_UserColumnName="Socio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="202" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
               <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" />
               <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material">
