@@ -277,36 +277,6 @@ WHERE        (IdCamion = @IdCamion)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vConciliacionTableAdapter" GeneratorDataComponentClassName="vConciliacionTableAdapter" Name="vConciliacion" UserDataComponentName="vConciliacionTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="dbCrocConnectionString (Settings)" DbObjectName="dbCroc.dbo.vConciliacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        IdConciliacion, IdCamion, Placa, Color, Metros, IdSocio, Socio, Fecha, Cantidad, Semana, Material, Precio, Activo
-FROM            vConciliacion
-WHERE        (Activo = 1)</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="IdConciliacion" DataSetColumn="IdConciliacion" />
-              <Mapping SourceColumn="IdCamion" DataSetColumn="IdCamion" />
-              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
-              <Mapping SourceColumn="Color" DataSetColumn="Color" />
-              <Mapping SourceColumn="Metros" DataSetColumn="Metros" />
-              <Mapping SourceColumn="IdSocio" DataSetColumn="IdSocio" />
-              <Mapping SourceColumn="Socio" DataSetColumn="Socio" />
-              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
-              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
-              <Mapping SourceColumn="Semana" DataSetColumn="Semana" />
-              <Mapping SourceColumn="Material" DataSetColumn="Material" />
-              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
-              <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vSocioTableAdapter" GeneratorDataComponentClassName="vSocioTableAdapter" Name="vSocio" UserDataComponentName="vSocioTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="dbCrocConnectionString (Settings)" DbObjectName="dbCroc.dbo.vSocio" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -386,6 +356,34 @@ SELECT IdConciliacion, IdCamion, Fecha, Cantidad, Material, Precio, Activo FROM 
             <Mappings>
               <Mapping SourceColumn="IdConciliacion" DataSetColumn="IdConciliacion" />
               <Mapping SourceColumn="IdCamion" DataSetColumn="IdCamion" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="Material" DataSetColumn="Material" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+              <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vConciliacionTableAdapter" GeneratorDataComponentClassName="vConciliacionTableAdapter" Name="vConciliacion" UserDataComponentName="vConciliacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbCrocConnectionString (Settings)" DbObjectName="dbCroc.dbo.vConciliacion" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        IdConciliacion, IdCamion, Placa, Metros, IdSocio, Socio, Fecha, Cantidad, Material, Precio, Activo
+FROM            vConciliacion
+WHERE        (Activo = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdConciliacion" DataSetColumn="IdConciliacion" />
+              <Mapping SourceColumn="IdCamion" DataSetColumn="IdCamion" />
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="Metros" DataSetColumn="Metros" />
+              <Mapping SourceColumn="IdSocio" DataSetColumn="IdSocio" />
+              <Mapping SourceColumn="Socio" DataSetColumn="Socio" />
               <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
               <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
               <Mapping SourceColumn="Material" DataSetColumn="Material" />
@@ -584,6 +582,37 @@ SELECT IdConciliacion, IdCamion, Fecha, Cantidad, Material, Precio, Activo FROM 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tblConciliacion" msprop:Generator_TableClassName="tblConciliacionDataTable" msprop:Generator_TableVarName="tabletblConciliacion" msprop:Generator_TablePropName="tblConciliacion" msprop:Generator_RowDeletingName="tblConciliacionRowDeleting" msprop:Generator_RowChangingName="tblConciliacionRowChanging" msprop:Generator_RowEvHandlerName="tblConciliacionRowChangeEventHandler" msprop:Generator_RowDeletedName="tblConciliacionRowDeleted" msprop:Generator_UserTableName="tblConciliacion" msprop:Generator_RowChangedName="tblConciliacionRowChanged" msprop:Generator_RowEvArgName="tblConciliacionRowChangeEvent" msprop:Generator_RowClassName="tblConciliacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdConciliacion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdConciliacion" msprop:Generator_ColumnPropNameInRow="IdConciliacion" msprop:Generator_ColumnPropNameInTable="IdConciliacionColumn" msprop:Generator_UserColumnName="IdConciliacion" type="xs:int" />
+              <xs:element name="IdCamion" msprop:Generator_ColumnVarNameInTable="columnIdCamion" msprop:Generator_ColumnPropNameInRow="IdCamion" msprop:Generator_ColumnPropNameInTable="IdCamionColumn" msprop:Generator_UserColumnName="IdCamion" type="xs:int" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" />
+              <xs:element name="Activo" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_UserColumnName="Activo" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="vConciliacion" msprop:Generator_TableClassName="vConciliacionDataTable" msprop:Generator_TableVarName="tablevConciliacion" msprop:Generator_TablePropName="vConciliacion" msprop:Generator_RowDeletingName="vConciliacionRowDeleting" msprop:Generator_RowChangingName="vConciliacionRowChanging" msprop:Generator_RowEvHandlerName="vConciliacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vConciliacionRowDeleted" msprop:Generator_UserTableName="vConciliacion" msprop:Generator_RowChangedName="vConciliacionRowChanged" msprop:Generator_RowEvArgName="vConciliacionRowChangeEvent" msprop:Generator_RowClassName="vConciliacionRow">
           <xs:complexType>
             <xs:sequence>
@@ -593,13 +622,6 @@ SELECT IdConciliacion, IdCamion, Fecha, Cantidad, Material, Precio, Activo FROM 
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Color" msprop:Generator_ColumnVarNameInTable="columnColor" msprop:Generator_ColumnPropNameInRow="Color" msprop:Generator_ColumnPropNameInTable="ColorColumn" msprop:Generator_UserColumnName="Color">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -618,38 +640,6 @@ SELECT IdConciliacion, IdCamion, Fecha, Cantidad, Material, Precio, Activo FROM 
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Semana" msprop:Generator_ColumnVarNameInTable="columnSemana" msprop:Generator_ColumnPropNameInRow="Semana" msprop:Generator_ColumnPropNameInTable="SemanaColumn" msprop:Generator_UserColumnName="Semana" type="xs:int" />
-              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" />
-              <xs:element name="Activo" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_UserColumnName="Activo" type="xs:boolean" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="tblConciliacion" msprop:Generator_TableClassName="tblConciliacionDataTable" msprop:Generator_TableVarName="tabletblConciliacion" msprop:Generator_TablePropName="tblConciliacion" msprop:Generator_RowDeletingName="tblConciliacionRowDeleting" msprop:Generator_RowChangingName="tblConciliacionRowChanging" msprop:Generator_RowEvHandlerName="tblConciliacionRowChangeEventHandler" msprop:Generator_RowDeletedName="tblConciliacionRowDeleted" msprop:Generator_UserTableName="tblConciliacion" msprop:Generator_RowChangedName="tblConciliacionRowChanged" msprop:Generator_RowEvArgName="tblConciliacionRowChangeEvent" msprop:Generator_RowClassName="tblConciliacionRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="IdConciliacion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdConciliacion" msprop:Generator_ColumnPropNameInRow="IdConciliacion" msprop:Generator_ColumnPropNameInTable="IdConciliacionColumn" msprop:Generator_UserColumnName="IdConciliacion" type="xs:int" />
-              <xs:element name="IdCamion" msprop:Generator_ColumnVarNameInTable="columnIdCamion" msprop:Generator_ColumnPropNameInRow="IdCamion" msprop:Generator_ColumnPropNameInTable="IdCamionColumn" msprop:Generator_UserColumnName="IdCamion" type="xs:int" />
               <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -697,10 +687,6 @@ SELECT IdConciliacion, IdCamion, Fecha, Cantidad, Material, Precio, Activo FROM 
     <xs:unique name="vCamiones_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vCamiones" />
       <xs:field xpath="mstns:IdCamion" />
-    </xs:unique>
-    <xs:unique name="vConciliacion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:vConciliacion" />
-      <xs:field xpath="mstns:IdConciliacion" />
     </xs:unique>
     <xs:unique name="tblConciliacion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:tblConciliacion" />
