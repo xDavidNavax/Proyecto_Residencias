@@ -29,8 +29,8 @@ namespace Proyecto_Residencias
         private void fSocios_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dbCrocDataSet.tblSocios' Puede moverla o quitarla según sea necesario.
-            this.tblSociosTableAdapter.Fill(this.dbCrocDataSet.tblSocios);
-
+            //this.tblSociosTableAdapter.Fill(this.dbCrocDataSet.tblSocios);
+            this.CargaDatos();
         }
 
         private void CargaDatos() {
@@ -85,9 +85,7 @@ namespace Proyecto_Residencias
                 {
                     //Ejecuta la consulta de Eliminar
                     int idSocio = int.Parse(this.idSocioTextBox.Text);
-                    this.tblSociosTableAdapter.Delete(idSocio, nombreTextBox.Text,
-                        primerApellidoTextBox.Text, segundoApellidoTextBox.Text, 
-                        telefonoTextBox.Text, ciudadTextBox.Text,true);
+                    this.tblSociosTableAdapter.Delete(idSocio);
                     MessageBox.Show("¡El registro se borró correctamente!");
                     this.CargaDatos();
                 }
