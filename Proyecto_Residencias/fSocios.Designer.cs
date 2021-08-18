@@ -491,7 +491,7 @@
             this.tableAdapterManager.tblSociosTableAdapter = this.tblSociosTableAdapter;
             this.tableAdapterManager.tblUsuarioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Proyecto_Residencias.dbCrocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.vCamionesTableAdapter = null;
+            //this.tableAdapterManager.vCamionesTableAdapter = null;
             // 
             // errorProvider1
             // 

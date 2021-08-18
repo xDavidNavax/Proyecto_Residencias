@@ -350,7 +350,7 @@
             this.tableAdapterManager.tblSociosTableAdapter = null;
             this.tableAdapterManager.tblUsuarioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Proyecto_Residencias.dbCrocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.vCamionesTableAdapter = null;
+            //this.tableAdapterManager.vCamionesTableAdapter = null;
             // 
             // tblCamionesBindingNavigator
             // 
