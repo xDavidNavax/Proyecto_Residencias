@@ -45,6 +45,8 @@
             this.primerApellidoTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.idSocioTextBox = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -72,8 +74,6 @@
             this.tblSociosTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.tblSociosTableAdapter();
             this.tableAdapterManager = new Proyecto_Residencias.dbCrocDataSetTableAdapters.TableAdapterManager();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblSociosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbCrocDataSet)).BeginInit();
@@ -185,6 +185,7 @@
             // dbCrocDataSet
             // 
             this.dbCrocDataSet.DataSetName = "dbCrocDataSet";
+            this.dbCrocDataSet.EnforceConstraints = false;
             this.dbCrocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // telefonoTextBox
@@ -237,6 +238,26 @@
             this.idSocioTextBox.ReadOnly = true;
             this.idSocioTextBox.Size = new System.Drawing.Size(75, 20);
             this.idSocioTextBox.TabIndex = 3;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.Location = new System.Drawing.Point(842, 18);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 70);
+            this.btnCancelar.TabIndex = 0;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(934, 19);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 70);
+            this.btnGuardar.TabIndex = 1;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnAgregar
             // 
@@ -491,31 +512,10 @@
             this.tableAdapterManager.tblSociosTableAdapter = this.tblSociosTableAdapter;
             this.tableAdapterManager.tblUsuarioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Proyecto_Residencias.dbCrocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            //this.tableAdapterManager.vCamionesTableAdapter = null;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(934, 19);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 70);
-            this.btnGuardar.TabIndex = 1;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(842, 18);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 70);
-            this.btnCancelar.TabIndex = 0;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // fSocios
             // 
@@ -528,6 +528,7 @@
             this.Controls.Add(this.tblSociosBindingNavigator);
             this.Controls.Add(this.pnlBotones);
             this.Controls.Add(this.pnlDetalle);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fSocios";
             this.Opacity = 0.95D;
             this.Text = "SOCIOS";

@@ -325,6 +325,7 @@
             // dbCrocDataSet
             // 
             this.dbCrocDataSet.DataSetName = "dbCrocDataSet";
+            this.dbCrocDataSet.EnforceConstraints = false;
             this.dbCrocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tblCamionesBindingSource
@@ -350,7 +351,6 @@
             this.tableAdapterManager.tblSociosTableAdapter = null;
             this.tableAdapterManager.tblUsuarioTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Proyecto_Residencias.dbCrocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            //this.tableAdapterManager.vCamionesTableAdapter = null;
             // 
             // tblCamionesBindingNavigator
             // 
@@ -571,6 +571,7 @@
             this.Controls.Add(this.tblCamionesBindingNavigator);
             this.Controls.Add(this.pnlDetalle);
             this.Controls.Add(this.pnlBotones);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fCamiones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CAMIONES";
