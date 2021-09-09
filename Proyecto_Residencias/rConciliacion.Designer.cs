@@ -43,13 +43,13 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dbCrocDataSet = new Proyecto_Residencias.dbCrocDataSet();
-            this.vConciliacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vConciliacionTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.vConciliacionTableAdapter();
+            this.rConciliacionTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.rConciliacionTableAdapter();
+            this.rConciliacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             idCamionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             this.pnlBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbCrocDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vConciliacionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rConciliacionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idCamionLabel
@@ -163,8 +163,8 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "dsConciliacion";
-            reportDataSource1.Value = this.vConciliacionBindingSource;
+            reportDataSource1.Name = "dsDatos";
+            reportDataSource1.Value = this.rConciliacionBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Proyecto_Residencias.iConciliacion.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 100);
@@ -179,14 +179,14 @@
             this.dbCrocDataSet.EnforceConstraints = false;
             this.dbCrocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // vConciliacionBindingSource
+            // rConciliacionTableAdapter
             // 
-            this.vConciliacionBindingSource.DataMember = "vConciliacion";
-            this.vConciliacionBindingSource.DataSource = this.dbCrocDataSet;
+            this.rConciliacionTableAdapter.ClearBeforeFill = true;
             // 
-            // vConciliacionTableAdapter
+            // rConciliacionBindingSource
             // 
-            this.vConciliacionTableAdapter.ClearBeforeFill = true;
+            this.rConciliacionBindingSource.DataMember = "rConciliacion";
+            this.rConciliacionBindingSource.DataSource = this.dbCrocDataSet;
             // 
             // rConciliacion
             // 
@@ -202,7 +202,7 @@
             this.pnlBotones.ResumeLayout(false);
             this.pnlBotones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbCrocDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vConciliacionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rConciliacionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,8 +218,8 @@
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.Label label2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource vConciliacionBindingSource;
         private dbCrocDataSet dbCrocDataSet;
-        private dbCrocDataSetTableAdapters.vConciliacionTableAdapter vConciliacionTableAdapter;
+        private dbCrocDataSetTableAdapters.rConciliacionTableAdapter rConciliacionTableAdapter;
+        private System.Windows.Forms.BindingSource rConciliacionBindingSource;
     }
 }
