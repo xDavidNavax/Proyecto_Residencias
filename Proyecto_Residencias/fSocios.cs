@@ -45,8 +45,6 @@ namespace Proyecto_Residencias
                 MessageBox.Show("Error " + ex.Message.ToString());
             }
             }
-
-
         private void ModoEdicion(string modo)
         {
             switch (modo)
@@ -73,9 +71,6 @@ namespace Proyecto_Residencias
                     break;
             }
         }
-
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             try

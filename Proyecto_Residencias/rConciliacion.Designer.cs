@@ -28,20 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label idCamionLabel;
             System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rConciliacion));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.pnlBotones = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnReporte = new System.Windows.Forms.Button();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dbCrocDataSet = new Proyecto_Residencias.dbCrocDataSet();
+            this.vConciliacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vConciliacionTableAdapter = new Proyecto_Residencias.dbCrocDataSetTableAdapters.vConciliacionTableAdapter();
             idCamionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             this.pnlBotones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbCrocDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vConciliacionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idCamionLabel
@@ -82,6 +90,17 @@
             this.pnlBotones.Size = new System.Drawing.Size(1016, 100);
             this.pnlBotones.TabIndex = 16;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(559, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(190, 16);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "GENERAR CONCILIACION";
+            // 
             // btnReporte
             // 
             this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
@@ -90,6 +109,7 @@
             this.btnReporte.Size = new System.Drawing.Size(84, 71);
             this.btnReporte.TabIndex = 19;
             this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // dtpFechaFin
             // 
@@ -140,28 +160,49 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // label2
+            // reportViewer1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(559, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 16);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "GENERAR CONCILIACION";
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "dsConciliacion";
+            reportDataSource1.Value = this.vConciliacionBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Proyecto_Residencias.iConciliacion.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 100);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1016, 415);
+            this.reportViewer1.TabIndex = 17;
+            // 
+            // dbCrocDataSet
+            // 
+            this.dbCrocDataSet.DataSetName = "dbCrocDataSet";
+            this.dbCrocDataSet.EnforceConstraints = false;
+            this.dbCrocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vConciliacionBindingSource
+            // 
+            this.vConciliacionBindingSource.DataMember = "vConciliacion";
+            this.vConciliacionBindingSource.DataSource = this.dbCrocDataSet;
+            // 
+            // vConciliacionTableAdapter
+            // 
+            this.vConciliacionTableAdapter.ClearBeforeFill = true;
             // 
             // rConciliacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 515);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.pnlBotones);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rConciliacion";
             this.Text = "REPORTES";
+            this.Load += new System.EventHandler(this.rConciliacion_Load);
             this.pnlBotones.ResumeLayout(false);
             this.pnlBotones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbCrocDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vConciliacionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,5 +217,9 @@
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.Label label2;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource vConciliacionBindingSource;
+        private dbCrocDataSet dbCrocDataSet;
+        private dbCrocDataSetTableAdapters.vConciliacionTableAdapter vConciliacionTableAdapter;
     }
 }
